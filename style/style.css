@@ -159,7 +159,6 @@ body {
   margin-bottom: 30px;
 }
 
-
 .sight-list {
   --columns: 3;
 
@@ -248,6 +247,11 @@ body {
   font-size: 14px;
 }
 
+/* Gems highlight */
+.gem-highlight {
+  background-color: black;
+} 
+
 @media screen and (max-width: 1023.98px) {
   .tour {
     width: calc(50% - 30px);
@@ -262,5 +266,4 @@ body {
   .sight-list {
     --columns: 1;
   }
-  
 }
