@@ -251,7 +251,8 @@ body {
 .gem-highlight {
   background-color: black;
   color: blue;
-} 
+  background-color: red;
+}
 
 @media screen and (max-width: 1023.98px) {
   .tour {
