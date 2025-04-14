@@ -1,0 +1,73 @@
+include mixin.pug 
+
+mixin tourItem(image, price, title, reviewRate, reviewCount, duration, tourPrice )
+        .tour
+          .tour-top
+            img.tour-img(src=image, alt='img')
+            span.tour-price From $#{price}
+          .tour-content
+            h3.tour-title=title
+            .tour-rating
+              .tour-review
+                .tour-star
+                  img.tour-star-icon(src='./assets/img/star-icon.png', alt='star-icon')
+                span.tour-review-count #{reviewRate} (#{reviewCount} reviews)  
+              span.tour-duration Duration: #{duration} hours
+            a.tour-button(href='www.youtube.com', target='_blank', rel='noopener noreferrerr') Tours Price $#{tourPrice}
+
+mixin popularItem(img, time, title, review, reviewCount)
+        .popular-item  
+          .popular-top
+            .popular-image-overlay
+            img.popular-img(src=img, alt="img")
+            a.popular-button(href="http://youtube.com") Must See
+          .popular-content 
+            .popular-time= time
+            h3.popular-title= title
+            .popular-rating 
+              img.popular-star-icon(src="./assets/img/star-icon.png", alt="star")
+              span.popular-review #{review} (#{reviewCount} reviews)
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="./style/style.css")
+    link(rel="stylesheet", href="./style/popular.css")
+    title Trip Planner
+  body
+
+    section.tour-section 
+      .container
+        h2.tour-list-heading Top BangKok Tours
+        .tour-list
+          +tourItem('./assets/img/img1.png', 40, ' Thailands Ayutthaya Temples Cruise from asdfsdfsdffBangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkok', 4.8, 12, 9, 61 )
+          +tourItem('./assets/img/img1.png', 40, ' Thailands Ayutthaya Temples Cruise from asdfsdfsdffBangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkok', 4.8, 12, 9, 61 )
+          +tourItem('./assets/img/img1.png', 40, ' Thailands Ayutthaya Temples Cruise from asdfsdfsdffBangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkokds Ayutthaya Temples Cruise from Bangkok', 4.8, 12, 9, 61 )
+
+
+    section.tour-section  
+      .container  
+        .popular-list 
+          +popularItem("./assets/img/img1.png","Sep 28 10:00 AM - 1:00 PM", "The Grand PalacePalacePalacePalacePalacePalacePalace", 4.8, 12)
+          +popularItem("./assets/img/img1.png","Sep 28 10:00 AM - 1:00 PM", "The Grand Palace", 4.8, 12)
+          +popularItem("./assets/img/img1.png","Sep 28 10:00 AM - 1:00 PM", "The Grand Palace", 4.8, 12)
+          +popularItem("./assets/img/img1.png","Sep 28 10:00 AM - 1:00 PM", "The Grand Palace", 4.8, 12)
+
+    section.tour-section  
+      .container   
+        h2.sight-heading Tours & Sightseeing
+        .container
+          .sight-list 
+            +sightItem()
+            +sightItem()
+            +sightItem()
+            +sightItem()
+    section.hidden-gem 
+      .container
+         
